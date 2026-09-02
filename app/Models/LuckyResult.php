@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class RegistrationLink extends Model
+class LuckyResult extends Model
 {
     protected $fillable = [
-        'token_hash',
-        'expires_at',
-        'deactivated_at',
+        'number',
+        'is_win',
+        'win_amount',
+        'rules_version',
     ];
 
     protected function casts(): array
     {
         return [
-            'expires_at' => 'datetime',
-            'deactivated_at' => 'datetime',
+            'is_win' => 'boolean',
+            'win_amount' => 'decimal:2',
         ];
     }
 

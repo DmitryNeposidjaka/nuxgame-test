@@ -33,7 +33,7 @@ class RegistrationController extends Controller
                 'expires_at' => now()->addDays(7),
             ]);
 
-            return route('home', [
+            return route('page-a.show', [
                 'token' => $token,
             ]);
         });

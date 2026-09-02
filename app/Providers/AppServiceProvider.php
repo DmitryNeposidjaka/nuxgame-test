@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\RandomNumberGenerator;
 use App\Contracts\RegistrationLinkGenerator;
+use App\Services\RandomNumberService;
 use App\Services\RegistrationLinkService;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             RegistrationLinkGenerator::class,
             RegistrationLinkService::class,
+        );
+        $this->app->bind(
+            RandomNumberGenerator::class,
+            RandomNumberService::class,
         );
     }
 

@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(RegistrationLink::class);
     }
+
+    public function luckyResults(): HasMany
+    {
+        return $this->hasMany(LuckyResult::class);
+    }
 }
